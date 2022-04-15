@@ -1,12 +1,12 @@
-from ast import Bytes
 from urllib.request import Request
-from fastapi import FastAPI,Request,File, Form, UploadFile
+from fastapi import FastAPI,Request,File, Form
 from fastapi.templating import Jinja2Templates
 from PIL import Image
-import pytesseract
+from numpy import size
 from pdf2image import convert_from_bytes
+import qrcode
 import joblib
-
+import pytesseract
 app = FastAPI()
 
 templates = Jinja2Templates(directory="template")
@@ -19,12 +19,16 @@ async def root(request:Request):
     return templates.TemplateResponse('index.html',{"request":request})
 
 
-
-
 @app.post('/')
 async def rooter(request:Request,file:bytes = File(...)):
     pages = convert_from_bytes(file,500,poppler_path="./poppler-0.68.0/bin")
-    pages[0].save("saved.jpg","JPEG")
+    image = pages[0]
+    qr = qrcode.QRCode(
+        version=1,
+        error_correction=qrcode.constants.ERROR_CORRECT_H,
+        box_size=30,
+        border=4,
+    )
     text = str(((pytesseract.image_to_string(pages[0]))))
     text = text.replace('-\n', '')  
     print(text)
@@ -34,4 +38,11 @@ async def rooter(request:Request,file:bytes = File(...)):
     tuple_result = sorted(list(zip(cat_s,list(map(lambda x:round(x*100,0),model.predict_proba(a)[0])))),key=lambda x:x[-1],reverse=True)
     for i in tuple_result:
         print(i)
+    qr.add_data(tuple_result[0][0])
+    qr.make(fit=True)
+
+    img = qr.make_image(fill_color="black", back_color="white")
+    image.paste(img,(2500,500))
+    image.save("saved.jpg","JPEG")
+
     return templates.TemplateResponse('output-test.html',{"request":request})
