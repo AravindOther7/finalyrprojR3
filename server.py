@@ -21,13 +21,20 @@ cat_s = ['Advocate', 'Arts', 'Automation Testing', 'Blockchain', 'Business Analy
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
 @app.get('/')
+async def getter(request:Request):
+    print("gege")
+    w = "ara"
+    return templates.TemplateResponse('home.html',{"request":request})
+
+
+@app.get('/upload')
 async def root(request:Request):
     if os.path.exists("./static/images/saved.jpg"):
             os.remove("./static/images/saved.jpg")
-    return templates.TemplateResponse('index.html',{"request":request})
+    return templates.TemplateResponse('upload.html',{"request":request})
 
 
-@app.post('/')
+@app.post('/upload')
 async def rooter(request:Request,file:bytes = File(...)):
     pages = convert_from_bytes(file,500,poppler_path="./poppler-0.68.0/bin")
     image = pages[0]
