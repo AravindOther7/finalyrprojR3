@@ -1,0 +1,35 @@
+
+body {
+  margin:0;
+  padding:0;
+  font-family: sans-serif;
+  background: linear-gradient(#141e30, #243b55); 
+}
+
+
+h1{
+  color: white !important;
+  text-align: center;
+}
+
+
+.card{
+  max-width: 50%; 
+  margin: 0 auto; 
+  float: none;
+  background: rgba(0,0,0,.5) !important;
+  box-sizing: border-box !important;
+  box-shadow: 0 15px 25px rgba(0,0,0,.7) !important;
+  border-radius: 10px !important;
+}
+
+.card-header{
+  border-bottom: 2px solid rgb(20 102 120 / 56%) !important;
+}
+
+.form-group{
+  max-width: 60%;
+  margin: auto;
+  padding-bottom: 20px;
+}
+
