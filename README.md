@@ -13,3 +13,34 @@ By conducting a test, providing and storing scores in a database, generating QR 
 the score and other information hence the validation authenticates or
 provides some kind of credibility to the resume stating he/she is skilled in.
 
+## SYSTEM OVERVIEW
+Once the resume is uploaded to our system , it will extract the text in the resume using tesseract OCR and
+feed the extracted resume to our TF-IDF model which will determine the domain of the person who uploaded
+the resume, then a test link will be sent to the uploader’s email ( email Id will also be extracted from the resume ,
+if email Id not present in the resume then it is considered to be invalid) , the uploader will take up the test through
+the link and the results will be stored in our database ,all the above validated information are stored in the
+system’s database.
+
+A QR code will be generated and given with the
+resume which upon scanning will show the domain and
+all the validated data from the resume.
+
+### 1) UPLOAD RESUME
+
+Candidate has to upload his/her resume in the web.
+
+### 2) KEYWORD EXTRACTION
+
+Keywords from the resume are extracted using ML.
+
+### 3) KEYWORD VALIDATION
+
+Keywords are validated by making the candidate to attend a test based on the extracted keyword.
+
+### 4) SCORE PROVISION
+
+Based on the relevance of the job description and skillset mark weightage will be assigned for each question.
+
+### 5) QR CODE GENERATION
+
+A QR code will be generated and added with the resume which on scanning will provide the information of the validated content from the resume.
