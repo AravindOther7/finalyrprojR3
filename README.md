@@ -25,41 +25,41 @@ A QR code will be generated and given with the
 resume which upon scanning will show the domain and
 all the validated data from the resume.
 
-### 1) UPLOAD RESUME
+#### 1) UPLOAD RESUME
 
 Candidate has to upload his/her resume in the web.
 
-### 2) KEYWORD EXTRACTION
+#### 2) KEYWORD EXTRACTION
 
 Keywords from the resume are extracted using ML.
 
-### 3) KEYWORD VALIDATION
+#### 3) KEYWORD VALIDATION
 
 Keywords are validated by making the candidate to attend a test based on the extracted keyword.
 
-### 4) SCORE PROVISION
+#### 4) SCORE PROVISION
 
 Based on the relevance of the job description and skillset mark weightage will be assigned for each question.
 
-### 5) QR CODE GENERATION
+#### 5) QR CODE GENERATION
 
 A QR code will be generated and added with the resume which on scanning will provide the information of the validated content from the resume.
 
 
 ## Modules of the System:
 
-### MODULE 1 – Text extraction using tesseract OCR (Input: Uploader’s resume)
+MODULE 1 – Text extraction using tesseract OCR (Input: Uploader’s resume)
 
-### MODULE 2 – Term Frequency – Inverse Document Frequency NLP Model (Input: Output of module 1)
+MODULE 2 – Term Frequency – Inverse Document Frequency NLP Model (Input: Output of module 1)
 
-### MODULE 3 – Classification of domain using k-NN Algorithm, (Input: Output of module 2)
+MODULE 3 – Classification of domain using k-NN Algorithm, (Input: Output of module 2)
 
-### MODULE 4 – Text similarity validation with correct and provided answer, (Input: Output of module 2 and module 3)
+MODULE 4 – Text similarity validation with correct and provided answer, (Input: Output of module 2 and module 3)
 
-### MODULE 5 – User Interface (Input: Output of module 1, module 2, and module3 and module 4)
+MODULE 5 – User Interface (Input: Output of module 1, module 2, and module3 and module 4)
 
 
-# Team Members
-## Aravind R 
-## Nikhil R 
-## Vishnu Prasath R
+## Team Members
+### Aravind R 
+### Nikhil R 
+### Vishnu Prasath R
