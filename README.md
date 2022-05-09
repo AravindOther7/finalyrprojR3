@@ -25,6 +25,8 @@ A QR code will be generated and given with the
 resume which upon scanning will show the domain and
 all the validated data from the resume.
 
+### Process
+
 #### 1) UPLOAD RESUME
 
 Candidate has to upload his/her resume in the web.
