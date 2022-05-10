@@ -4,72 +4,112 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="https://cdn-icons-png.flaticon.com/512/4185/4185501.png"
+    />
     <!-- CSS only -->
-    <link rel="stylesheet" type="text/css" href="../styles.css">
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', path='/styles.css') }}"
+    />
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
 
     <title>Data Science Test - Resume Endrorser</title>
   </head>
 
   <body>
+    <h1 class="text-center p-4">Automated Resume Endorser</h1>
 
-    <h1 class="text-center p-4"> Automated Resume Endorser </h1>
+    <h2 class="text-center p-4 mb-4">
+      Welcome to the Data Science Domain Test
+    </h2>
 
-    <h2 class="text-center p-4 mb-4">Welcome to the Data Science Domain Test</h2>
+    <div class="card text-white mb-3 text-center">
+      <div class="card-header">
+        Please read the questions carefully and answer it
+      </div>
 
-    <div class="card text-white  mb-3  text-center " >
+      <div class="card-body">
+        <form action="/test" method="post">
+          <h5 class="card-title">
+            You are working on a time series data set. You manager has asked you
+            to build a high accuracy model. You start with the decision tree
+            algorithm, since you know it works fairly well on all kinds of data.
+            Later, you tried a time series regression model and got higher
+            accuracy than decision tree model. Can this happen? Why?
+          </h5>
+          <div class="form-group">
+            <label for="answer1"></label>
+            <textarea
+              class="form-control"
+              name="answer1"
+              id="answer1"
+              cols="30"
+              rows="10"
+              placeholder="Enter your answer"
+            ></textarea>
+          </div>
 
-      <div class="card-header "> Please read the questions carefully and answer it </div>
-      
-        <div class="card-body">
+          <h5 class="card-title">
+            You came to know that your model is suffering from low bias and high
+            variance. Which algorithm should you use to tackle it? Why?
+          </h5>
+          <div class="form-group">
+            <label for="answer2"></label>
+            <textarea
+              class="form-control"
+              name="answer2"
+              rows="3"
+              placeholder="Enter your answer here"
+            ></textarea>
+          </div>
 
-          <form action="/test" method="post">
+          <h5 class="card-title">
+            After spending several hours, you are now anxious to build a high
+            accuracy model. As a result, you build 5 GBM models, thinking a
+            boosting algorithm would do the magic. Unfortunately, neither of
+            models could perform better than benchmark score. Finally, you
+            decided to combine those models. Though, ensembled models are known
+            to return high accuracy, but you are unfortunate. Where did you
+            miss?
+          </h5>
+          <div class="form-group">
+            <label for="answer3"></label>
+            <textarea
+              class="form-control"
+              name="answer3"
+              rows="3"
+              placeholder="Enter your answer here"
+            ></textarea>
+          </div>
 
-            <h5 class="card-title">
-             You are assigned a new project which involves helping a food delivery company save more money. The problem is, company’s delivery team aren’t able to deliver food on time. As a result, their customers get unhappy. And, to keep them happy, they end up delivering food for free. Which machine learning algorithm can save them?
-            </h5>
-            <div class="form-group">
-              <label for="answer1"></label>
-              <textarea class ="form-control" name="answer" id="" cols="30" rows="10" placeholder="Enter your answer"></textarea>
-            </div>
-
-            <!-- <h5 class="card-title">
-               What is object graph in garbage collector? Is this the graph physically
-        exists? Or how this graph gets created?
-            </h5>
-            <div class="form-group">
-              <label for="answer2"></label>
-              <textarea
-                class="form-control"
-                name="answer2"
-                rows="3"
-                placeholder="Enter your answer here"
-              ></textarea>
-            </div>
-
-            <h5 class="card-title"> What is the difference between IIS and Kestrel? Why do we need two web
-        servers?</h5>
-            <div class="form-group">
-              <label for="answer3"></label>
-              <textarea
-                class="form-control"
-                name="answer3"
-                rows="3"
-                placeholder="Enter your answer here"
-              ></textarea>
-            </div> -->
-
-            <input type="submit" value="Submit" class="btn btn-outline-info"/>
-          </form>
-
-        </div>
+          <input type="submit" value="Submit" class="btn btn-outline-info" />
+        </form>
+      </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    
-  
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

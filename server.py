@@ -22,8 +22,6 @@ pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tessera
 
 @app.get('/')
 async def getter(request:Request):
-    print("gege")
-    w = "ara"
     return templates.TemplateResponse('home.html',{"request":request})
 
 
